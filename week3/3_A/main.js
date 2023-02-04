@@ -1,26 +1,35 @@
-let rotateBy = 5;
+// first arm
+let rotateBy = 10;
 function setup() {
     createCanvas(600, 600);
     background(0);
     angleMode(DEGREES);
 }
-
-function makeArm(rotateBy) {
+function makeArm(rotateBy, primaryColor) {
     let alt = Math.round(rotateBy / 360);
     noFill();
-    stroke(255);
-    strokeWeight(1);
-    /* ellipse(150, 150 + alt, 150 - alt); */
-    bezier(alt - 10, alt + 10, 10, 10, 160, 90, 50, 80)
+    stroke(primaryColor);
+    strokeWeight(5);
+    bezier(alt - 20, alt + 20, 20, 20, 320, 180, 100, 160)
 }
-
-function draw() {
-    translate(300, 300);
-    rotate(rotateBy); //come back
-    makeArm(rotateBy);
+// second arm
+function makeArmTwo(rotateBy, primaryColor) {
+    let alt = Math.round(rotateBy / 360);
+    noFill();
+    stroke(primaryColor);
+    strokeWeight(5);
+    ellipse(350, 350 + alt, 350 - alt);
+}
+function draw(originX, originY) {
+    translate(originX, originY);
+    rotate(rotateBy);
+    makeArm(rotateBy, "yellow");
+    makeArmTwo(rotateBy, "white");
     rotateBy += 5;
 }
-
 function mousePressed() {
+    loop();
+}
+function mouseReleased() {
     noLoop();
 }
