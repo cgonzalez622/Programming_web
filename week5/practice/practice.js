@@ -39,7 +39,7 @@ myWhiteMouse.click(); */
 //properties
 //classes vs instances
 
-let startDotLocation = 50;
+/* let startDotLocation = 50;
 
 function setup() {
     createCanvas(1000, 800);
@@ -67,7 +67,7 @@ class Dot {
         } 
         circle(this.x, this.y, 100);
     }
-}
+} */
 
 
 // quiz info
@@ -85,4 +85,23 @@ class Dot {
 
 
 //placing your cards in diff formatt 
+/* 
+const myChihuahuas = ["Lucky", "Lucy", "Limda", "Lacey", "Carl"]; 
 
+for (let i = 0; i < myChihuahuas.length; i++) {
+    console.log("my dog", myChihuahuas[i], "is a really good puppy.");
+}
+
+console.log(myChihuahuas.toString());
+alert("my dog " + myChihuahuas[0] + " is a really good puppy");
+alert("my dog " + myChihuahuas[1] + " is a really good puppy");
+alert("my dog " + myChihuahuas[2] + " is a really good puppy");
+alert("my dog " + myChihuahuas[3] + " is a really good puppy");
+alert("my dog " + myChihuahuas[4] + " is a really good puppy"); */
+
+
+let greekMythicalCharacters = ["Athena", "Zeus", "Hermes", "Hercules", "Hera", "that one guy"];
+greekMythicalCharacters.pop();
+greekMythicalCharacters.push("Hades");
+console.log(greekMythicalCharacters);
+window.alert("Some greek mythical characters are " + greekMythicalCharacters);
