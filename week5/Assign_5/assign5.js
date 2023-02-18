@@ -53,7 +53,7 @@ function draw() {
     if (gameState.numMatches === gameState.totalPairs) {
         fill("yellow");
         textSize(66);
-        text("you win!", 400, 425);
+        text("you win!", 600, 57);
         noLoop();
     }
     for (let k = 0; k < cards.length; k++) {
