@@ -8,8 +8,10 @@
     <title>Exc 6.2</title>
 </head>
 <body>    
-    <div id="myVueApp">Hello</div>
-
+    <div id="myVueApp">
+        <h1>Hello, {{name}}</h1>
+        <p v-if="name === 'World'">I am happy</p>
+    </div>
     <script src="exc6_1.js"></script>
 </body>
 </html>
