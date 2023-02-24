@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Assignment 6: Implement Vue 2 on an HTML Page</title>
+</head>
+<body>
+    <div class = "myApp" id="myApp">
+        <h1>Hello, {{name}}! Would you like to learn about llamas?</h1>
+        <p v-if="name === 'World'">Llamas are {{smart}}</p>
+        <p v-if="smart === 'able to learn to understand and perform basic tasks.'">A llama's {{live}}</p>
+        <p v-if="live === 'lifespan is 20 years.'">Llamas live {{social}}</p>
+        <p>Llamas can {{grow}}</p>
+        <p>Llamas can {{hum}}</p>
+        <p>Llamas are {{therapy_animals}}</p>
+        <p>Llama fiber {{yarn}}</p>
+        <p>Llamas can {{shoot}}</p>
+        <p v-if="yarn === 'is extremely versatile.'">Llamas are {{plant_lovers}}</p>
+        <p v-if="plant_lovers === 'vegetarians.'">Llamas are camelid</p>
+        <br>
+        <p>Thank you <a href="https://www.discovery.com/nature/llama-mia--10-fun-facts-about-llamas-pictures">Discovery</a> for the facts!</p>
+    </div>
+    <div class = "llama">
+        <iframe src="https://giphy.com/embed/3oKIPuE14D3PSO5Cgg" width="480" height="320" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
+    </div>
+    <script src="assign6.js"></script>
+</body>
+</html>
