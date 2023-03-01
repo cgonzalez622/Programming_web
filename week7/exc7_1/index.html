@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="exc7_1.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>Document</title>
+    <script src="../vue.js"></script>
+    <title>Exercise 7.1</title>
 </head>
 <body>
-    <section class="section" id="myApp">
-        <div class="container" v-cloak>
-            <h1 class="title is-1">week 7</h1>
-            <a v-bind:href="url" v-bind:title="name">youtube</a>
-            <div v-bind:style="{fontSize: '36px', fontWeight: '900'}">I am a div</div>
-        </div>
-    </section>
+    <div class="container" id="myApp" v-cloak>
+        <h1 class="title" :style="baseStyle">Llamas versus Alpacas</h1>
+            <a v-bind:href="urlOne" v-bind:title="nameOne" v-bind:class="{active: currentRoute==='llamas'}">More information on Llamas</a>
+            <br>
+            <a v-bind:href="urlTwo" v-bind:title="nameTwo">More information on Alpacas</a>
+    </div>
+
     <script src="exc7_1.js"></script>    
 </body>
 </html>
