@@ -5,22 +5,29 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/vue@3"></script>
+  <title>Exercise 7.2 </title>
 </head>
 
 <body>
-  <div id="llama-list">
+<div id="llama-list">
     <h1 class="llama-list-title">What to name your next llama</h1>
-    <div class="list-container">
-      <div class="list-head">
-        <span class="rank">Rank</span>
-        <span class="name">Name</span>
-      </div>
-
+    <div class="list-container" v-cloak>
+        <table class="table">
+            <thead>
+                <tr class="list-head">
+                    <th>Rank</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(rank, idx) in llamas" v-bind:class="{'odd': idx%2==0, 'llama': rank.name.toLowerCase().includes('llama')}">
+                    <td class="rank">{{rank.rank}}</td>
+                    <td class="name">{{rank.name}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <p>{{llamas[0]}}</p>
-  </div>
-
+</div>
   <script src="llamas.js"></script>
 </body>
-
 </html>
