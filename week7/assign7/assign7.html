@@ -6,10 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assign7.css">
     <script src="../vue.js"></script>
-    <title>Assignment 7</title>
+    <title>Collection Demo</title>
 </head>
 <body>
-    
+    <h1>Western Art Movements</h1>
+    <div id="myCollectionApp">
+        <table>
+            <thead>
+                <th></th>
+                <th>Movement</th>
+                <th>Time</th>
+                <th>Locations</th>
+                <th>Artist Examples</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                <tr v-for="console in consoles">
+                    <td>image</td>
+                    <td>{{console.movement}}</td>
+                    <td>{{console.time}}</td>
+                    <td>{{console.locations}}</td>
+                    <td>{{console.artistExamples}}</td>
+                    <td>{{console.description}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <script src="assign7.js"></script>
 </body>
