@@ -21,8 +21,13 @@
                 <th>Description</th>
             </thead>
             <tbody>
-                <tr v-for="console in consoles">
-                    <td>image</td>
+                <!-- wrapping 'console' in '' will give more detail to the item in the array/ second argument refers to the index number-->
+                <tr v-for="(console, idx) in consoles"
+                    v-bind:class="{odd: idx % 2 !== 0}"               
+                >
+                <!-- putting v-bind infront of any attribute will  give us access to any data in our vue/javascript accessible
+                another example is ....==0,second: console.locations === 'Global'-->
+                    <td><img v-bind:src="console.imgs" v-bind:alt="console.time + ' ' + console.movement"></td>
                     <td>{{console.movement}}</td>
                     <td>{{console.time}}</td>
                     <td>{{console.locations}}</td>

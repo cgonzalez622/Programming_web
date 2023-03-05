@@ -1,0 +1,14 @@
+table, thead, th, tbody, tr, td {
+    border: 0 none;
+}
+
+
+
+.odd {
+    background-color: bisque;
+}
+
+
+.second {
+    color: aqua;
+}
