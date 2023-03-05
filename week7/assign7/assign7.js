@@ -9,7 +9,7 @@ createApp({
             time: "14th - 17th century",
             locations: "Italy, and gradually across Europe", 
             artistExamples: "Leonardo da Vinci, Michelangelo, Caravaggio",
-            description: "A shift from medieval period styles to the representational forms of mostly biblical scenes to include portraits, episodes from Classical religion, and culture."
+            description: "A shift from medieval period styles to the representational forms of biblical scenes, portraits, and episodes from Classical religion."
             },
             {
             artist: "Water Lilies Series by Claude Monet",
@@ -18,7 +18,7 @@ createApp({
             time: "1867 - 1886",
             locations: "Key regions are France and England",
             artistExamples: "Claude Monet, Edgar Degas, Paul Cezanne",
-            description: "A art movement that centered around the rebelling against classical subject matter and embraced modernity, desiring to create works of reality."
+            description: "A art movement that centered around the rebelling against classical subject matter and embraced modernity and depicting reality."
             },
             {
             artist: "Bauhaus Exhibition Poster (1923)",
@@ -27,7 +27,7 @@ createApp({
             time: "late 19th - early 20th centuries",
             locations: "Global phenomenon",
             artistExamples: "Pablo Picasso, Louise Bourgeois, Georgia O'Keeffe",
-            description: "A movement that sought for the creation of new forms of art, philosophy, and social organization which reflected the newly emerging industrial world, including features such as urbanization, architecture, new technologies, and war."
+            description: "Sought for the creation of new forms of art, philosophy, and social organization which reflected the newly emerging industrial world, urbanization, architecture, and war."
             },
             {
             artist: "Red Circle on Black, 1965 by Jiro Yoshihara",
@@ -45,7 +45,7 @@ createApp({
             time: "late 20th/21st century - present",
             locations: "Global",
             artistExamples: "Jean-Michel Basquiat, Keith Haring, Agnes Martin",
-            description: "Contemporary art is part of a cultural dialogue that concerns larger contextual frameworks such as personal and cultural identity, family, community, and nationality."
+            description: "A cultural dialogue that concerns larger contextual frameworks such as personal and cultural identity, family, community, and nationality."
             }]
         }
     }
