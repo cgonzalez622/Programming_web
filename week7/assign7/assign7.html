@@ -27,7 +27,7 @@
                 >
                 <!-- putting v-bind infront of any attribute will  give us access to any data in our vue/javascript accessible
                 another example is ....==0,second: console.locations === 'Global'-->
-                    <td><img v-bind:src="console.imgs" v-bind:alt="console.time + ' ' + console.movement"></td>
+                    <td><img v-bind:title="console.artist" v-bind:src="console.image" v-bind:alt="console.time + ' ' + console.movement"></td>
                     <td>{{console.movement}}</td>
                     <td>{{console.time}}</td>
                     <td>{{console.locations}}</td>

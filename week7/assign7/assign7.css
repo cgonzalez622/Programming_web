@@ -1,7 +1,9 @@
-table, thead, th, tbody, tr, td {
-    border: 0 none;
+table {
+    margin: 100px;
 }
-
+td {
+    border-left: 50px;
+}
 
 
 .odd {
