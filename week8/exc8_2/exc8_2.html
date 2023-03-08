@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="Exc8_2.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Calculator</title>
 </head>
 <body>
-    
+    <h1>Ecercise 8.2</h1>
+    <div id="calcApp">
+        <form>
+        <div>
+            <input v-model.number="firstNum" type="number" placeholder="first number">
+            <select v-model="operation">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">&times;</option>
+                <option value="divide">&divide;</option>
+            </select>
+            <input v-model.number="secondNum" type="number" placeholder="second number">
+        </div>
+        <button v-on:click="calculate(firstNum, secondNum)" type="button">Calculate</button> 
+        <!-- if you leave the type="button" off it turns into a submit button becauses its in a form element-->
+        </form>
+        <div>
+            Operation: {{operation}}
+            <br>
+            Total: <strong>{{total}}</strong>
+        </div>
+    </div>
+    <script src="exc8_2.js"></script>
 </body>
 </html>
