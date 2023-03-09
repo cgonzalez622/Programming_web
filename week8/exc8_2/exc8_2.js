@@ -9,7 +9,7 @@ createApp({
         }
     },
     methods: {
-        calculate: (num1, num2) => {
+        calculate (num1, num2) {
             switch (this.operation) {
                 case "add":
                     this.total = num1 + num2;
