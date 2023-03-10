@@ -50,7 +50,6 @@ form, fieldset {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin: 0 50px 50px 50px;
 }
 button {
     background-color: #26AD97; /* Green */
