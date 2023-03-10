@@ -9,12 +9,14 @@ h1 {
     font-family: 'Bodoni Moda', serif;
     font-size: 40px;
 }
+.styled-table, legend, label {
+    font-size: 16px;
+    font-family:Arial, Helvetica, sans-serif;
+}
 .styled-table {
     border-collapse: collapse;
     margin: 0 50px 50px 50px;
     margin-top: 0;
-    font-size: 16px;
-    font-family:Arial, Helvetica, sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
@@ -34,12 +36,19 @@ h1 {
     border-bottom: 2px solid #26AD97;
 }
 .styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #26AD97;
+    font-weight: 500;
+    color: #000;
 }
 .odd {
     background-color: #F8F1EB;
 }
 .second {
     color: gold;
+}
+form, fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
 }

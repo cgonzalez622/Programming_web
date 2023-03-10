@@ -77,6 +77,7 @@ createApp({
         deleteItem (item) {
             this.consoles = this.consoles.filter(console => {return console !== item;
             });
-    }
+        }
     
+    }
 }).mount("#myCollectionApp");
