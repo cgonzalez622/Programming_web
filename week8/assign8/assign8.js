@@ -2,7 +2,15 @@ const { createApp } = Vue;
 createApp({ 
   data() {
     return {
-            consoles: [{
+        newConsoleObj: {
+            image: "",
+            movement: "",
+            time: "",
+            locations: "", 
+            artistExamples: "",
+            description: ""
+        },
+        consoles: [{
             artist: "The School of Athens by Raphael",
             image: "imgs/The School of Athens by Raphael.jpg",
             movement: "Renaissance",
@@ -48,6 +56,27 @@ createApp({
             description: "A cultural dialogue that concerns larger contextual frameworks such as personal and cultural identity, family, community, and nationality."
             }]
         }
+    },
+    methods: {
+        submitHandler () {
+            console.log("submitted");
+            this.consoles = this.consoles.concat(this.newConsoleObj);
+            this.resetForm();
+        },
+        resetForm () {
+            this.newConsoleObj = {
+                image: "",
+                movement: "",
+                time: "",
+                locations: "", 
+                artistExamples: "",
+                description: ""
+            }
+
+        },
+        deleteItem (item) {
+            this.consoles = this.consoles.filter(console => {return console !== item;
+            });
     }
     
 }).mount("#myCollectionApp");

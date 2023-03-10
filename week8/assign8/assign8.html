@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assign8.css">
-    <script src="../vue.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Collection Demo</title>
 </head>
 <body>
@@ -19,6 +19,7 @@
                 <th>Locations</th>
                 <th>Artist Examples</th>
                 <th>Description</th>
+                <th class="cell actions">actions</th>
             </thead>
             <tbody>
                 <!-- wrapping 'console' in '' will give more detail to the item in the array/ second argument refers to the index number-->
@@ -32,9 +33,43 @@
                     <td>{{console.locations}}</td>
                     <td>{{console.artistExamples}}</td>
                     <td>{{console.description}}</td>
+                    <td><div class="cell actions">
+                        <button type="button" v-on:click="deleteItem(console)">Delete</button>
+                    </div></td>
                 </tr>
             </tbody>
         </table>
+        <form v-on:submit.prevent="submitHandler">
+            <fieldset>
+                <legend>Add a console to the collection</legend>
+                <div>
+                    <label for="image">Image</label>                        
+                    <input id="image" type="text" v-model="newConsoleObj.image">
+                </div>
+                <div>
+                    <label for="movement">Movement</label>                        
+                    <input id="movement" type="text" v-model="newConsoleObj.movement">
+                </div>
+                <div>
+                    <label for="time">Time</label>                        
+                    <input id="time" type="text" v-model="newConsoleObj.time">
+                </div>
+                <div>
+                    <label for="locations">Locations</label>                        
+                    <input id="locations" type="text" v-model="newConsoleObj.locations">
+                </div>
+                <div>
+                    <label for="artistExamples">Artist Examples</label>                        
+                    <input id="artistExamples" type="text" v-model="newConsoleObj.artistExamples">
+                </div>
+                <div>
+                    <label for="description">Description</label>                        
+                    <input id="description" type="text" v-model="newConsoleObj.description">
+                </div>
+                <button type="submit">submit</button>
+            </fieldset>
+        </form>
+
     </div>
 
     <script src="assign8.js"></script>
