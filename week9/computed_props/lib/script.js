@@ -14,6 +14,12 @@ Vue.createApp({
       postalCode: "55404"
     }
   },
+  methods: {
+    newNow() {
+        console.log("firing new now");
+        return Date.now();
+    }
+  },
   computed: {
         fullAddress() {
             console.log("firing full name")
