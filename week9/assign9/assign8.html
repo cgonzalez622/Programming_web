@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assign8.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Collection Demo</title>
+</head>
+<body>
+    <h1>Western Art Movements</h1>
+    <div id="myCollectionApp">
+        <table class="styled-table">
+            <thead>
+                <th></th>
+                <th>Movement</th>
+                <th>Time</th>
+                <th>Locations</th>
+                <th>Artist Examples</th>
+                <th>Description</th>
+                <th class="cell actions">actions</th>
+            </thead>
+            <tbody>
+                <!-- wrapping 'console' in '' will give more detail to the item in the array/ second argument refers to the index number-->
+                <tr class="active-row" v-for="(console, idx) in consoles" v-bind:class="{odd: idx % 2 !== 0}"               
+                >
+                <!-- putting v-bind infront of any attribute will  give us access to any data in our vue/javascript accessible
+                another example is ....==0,second: console.locations === 'Global'-->
+                    <td><img v-bind:title="console.artist" v-bind:src="console.image" v-bind:alt="console.time + ' ' + console.movement"></td>
+                    <td>{{console.movement}}</td>
+                    <td>{{console.time}}</td>
+                    <td>{{console.locations}}</td>
+                    <td>{{console.artistExamples}}</td>
+                    <td>{{console.description}}</td>
+                    <td><div class="cell actions">
+                        <button type="button" v-on:click="deleteItem(console)">Delete</button>
+                    </div></td>
+                </tr>
+            </tbody>
+        </table>
+        <form v-on:submit.prevent="submitHandler">
+            <fieldset>
+                <!--Adds a console to the collection -->
+                <legend>Add a Art Movement!</legend>
+                <div>
+                    <label for="image">Image</label>                        
+                    <input id="image" type="text" v-model="newConsoleObj.image">
+                </div>
+                <div>
+                    <label for="movement">Movement</label>                        
+                    <input id="movement" type="text" v-model="newConsoleObj.movement">
+                </div>
+                <div>
+                    <label for="time">Time</label>                        
+                    <input id="time" type="text" v-model="newConsoleObj.time">
+                </div>
+                <div>
+                    <label for="locations">Locations</label>                        
+                    <input id="locations" type="text" v-model="newConsoleObj.locations">
+                </div>
+                <div>
+                    <label for="artistExamples">Artist Examples</label>                        
+                    <input id="artistExamples" type="text" v-model="newConsoleObj.artistExamples">
+                </div>
+                <div>
+                    <label for="description">Description</label>                        
+                    <input id="description" type="text" v-model="newConsoleObj.description">
+                </div>
+                <button type="submit">submit</button>
+            </fieldset>
+        </form>
+
+    </div>
+
+    <script src="assign8.js"></script>
+</body>
+</html>
