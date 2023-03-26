@@ -82,7 +82,7 @@ function addNewConsole() {
 }
 function handleDelete(itemToDelete) {
     state.consoles = state.consoles.filter((itemToCheck) => {
-        return itemToCheck !== itemToCheck;
+        return itemToCheck !== itemToDelete;
     });
 
 }
@@ -117,27 +117,27 @@ function handleDelete(itemToDelete) {
                 <legend>Add a Art Movement!</legend>
                 <div>
                     <label for="image">Image</label>                        
-                    <input id="image" type="text" v-model="newConsoleObj.image">
+                    <input id="image" type="text" v-model="state.newConsoleObj.image">
                 </div>
                 <div>
                     <label for="movement">Movement</label>                        
-                    <input id="movement" type="text" v-model="newConsoleObj.movement">
+                    <input id="movement" type="text" v-model="state.newConsoleObj.movement">
                 </div>
                 <div>
                     <label for="time">Time</label>                        
-                    <input id="time" type="text" v-model="newConsoleObj.time">
+                    <input id="time" type="text" v-model="state.newConsoleObj.time">
                 </div>
                 <div>
                     <label for="locations">Locations</label>                        
-                    <input id="locations" type="text" v-model="newConsoleObj.locations">
+                    <input id="locations" type="text" v-model="state.newConsoleObj.locations">
                 </div>
                 <div>
                     <label for="artistExamples">Artist Examples</label>                        
-                    <input id="artistExamples" type="text" v-model="newConsoleObj.artistExamples">
+                    <input id="artistExamples" type="text" v-model="state.newConsoleObj.artistExamples">
                 </div>
                 <div>
                     <label for="description">Description</label>                        
-                    <input id="description" type="text" v-model="newConsoleObj.description">
+                    <input id="description" type="text" v-model="state.newConsoleObj.description">
                 </div>
                 <button type="submit">submit</button>
             </fieldset>
