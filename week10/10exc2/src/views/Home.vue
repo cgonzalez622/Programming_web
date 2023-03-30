@@ -9,10 +9,6 @@ console.log("MusicList", MusicList);
         <RouterLink :to="'/song/' + song.slug">{{song.title}}</RouterLink>
         </div>
     </div>
-
-
-
-
 </template>
 <style>
 .song-container {
@@ -20,6 +16,7 @@ console.log("MusicList", MusicList);
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .song-list-item {
     width: auto;
@@ -34,6 +31,7 @@ console.log("MusicList", MusicList);
 }
 .song-list-item a {
     color: black;
+    text-decoration: none;
 
 }
 .song-list-item:hover a {
