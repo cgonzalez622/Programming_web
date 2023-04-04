@@ -12,7 +12,7 @@ createApp({
         },
         consoles: [{
             artist: "The School of Athens by Raphael",
-            image: "imgs/The School of Athens by Raphael.jpg",
+            image: "https://cgonzalez622.studio.mcad.edu/program_web/imgs/The%20School%20of%20Athens%20by%20Raphael.jpg",
             movement: "Renaissance",
             time: "14th - 17th century",
             locations: "Italy, and gradually across Europe", 
