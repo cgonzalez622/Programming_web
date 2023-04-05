@@ -13,4 +13,16 @@ defineProps(["id", "name", "image"]);
 </template>
 
 <style scoped>
+.mov-card {
+    max-width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.footer {
+    border-top: 1px solid black;
+    padding-top: 10px;
+    text-align: center;
+}
 </style>
