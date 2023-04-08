@@ -1,7 +1,7 @@
 let img;
 
 function preload() {
-  img = loadImage('img/leaf.png');
+  img = loadImage('img/sakura.png');
 }
 function setup() {
   createCanvas(500, 500);
@@ -23,7 +23,7 @@ function draw() {
 
 function colorize(){
   const pg = createGraphics(img.width, img.height);
-  const randomColor = color(0, random(255), random(255));
+  const randomColor = color(random(255), 0, random(255));
   
   img.loadPixels();
   for (let y = 0; y < img.height; y++) {
