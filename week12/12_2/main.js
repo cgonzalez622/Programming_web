@@ -1,15 +1,13 @@
-var song;
+let song;
+
+
+function preload() {
+    song = loadSound("Servu.mp3");
+}
 
 function setup() {
     createCanvas(200, 200);
-    song = loadSound("Servu.mp3", loaded);
-
-}
-
-function loaded() {
-    button = createButton("play");
-    button.mousePressed(togglePlaying);
-    console.log("loaded");
+    song.play();
 }
 
 function draw() {
