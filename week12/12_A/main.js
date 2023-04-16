@@ -19,8 +19,11 @@ function setup() {
 }
 
 function draw() {
-    for(let i = 0; i < freqs.length; i++) {
-        pads[i].draw();
+    //ensure that the draw() function only tries to access the elements of the pads array after they have been properly initialized in the setup() function
+    if (pads.length > 0) {
+        for(let i = 0; i < freqs.length; i++) {
+            pads[i].draw();
+        }
     }
 
 }
@@ -57,19 +60,17 @@ class Pad {
         this.analyzer = new p5.Amplitude();
         this.analyzer.setInput(this.env);
 
-
     }
-    draw() {        
+    draw() {     
         let level = this.analyzer.getLevel();
-        let levelHeight = map(level, 0, 2.5, 0, 150);
-        console.log(level);
+        let levelHeight = map(level, 0, 1, 0, 150);
 
         fill ("orange");
         rect(this.x, this.y, 150, 150);
 
         //was unable to get the levels to show, not sure why....
-        fill ("black");
-        rect(this.x, this.y, 150, levelHeight);
+        fill ("yellow");
+        rect(this.x, this.y + 150 - levelHeight, 150, levelHeight);
     }
 
     play(){
@@ -77,5 +78,6 @@ class Pad {
         this.osc.freq(this.freq);
         this.env.play(this.osc);
     }
+
 
 }
