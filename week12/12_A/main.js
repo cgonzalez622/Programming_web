@@ -12,10 +12,7 @@ function setup() {
         pads.push(new Pad(10 + (160 * i), 10, freqs[i]));
         // this specific code will create all of the 4 pads
     }
-
-
 /*  test pad   pad1 = new Pad(10, 10, 130); */
-
 }
 
 function draw() {
@@ -36,8 +33,50 @@ function keyPressed() {
         }
     }
 }
-
 class Pad {
+    constructor(x, y, freq) {
+        //can set up the input squares here
+
+        this.x = x;
+        this.y = y;
+        this.freq = freq;
+
+        //oscillator, envelope, amplitude objects 
+
+        this.osc = new p5.Oscillator();
+        this.osc.amp(0);
+        this.osc.setType("sine");
+        this.osc.start();
+
+        //envelope 
+        this.env = new p5.Env();
+        this.env.setADSR(0.001, .1, .2, .1);
+        this.env.setRange(3, 0);
+
+        this.analyzer = new p5.Amplitude();
+        this.analyzer.setInput(this.osc); // <--- set input to oscillator
+
+    }
+    draw() {     
+        let level = this.analyzer.getLevel();
+        let levelHeight = map(level, 0, 1, 0, 150);
+
+        fill ("orange");
+        rect(this.x, this.y, 150, 150);
+
+        //was unable to get the levels to show, not sure why....
+        fill ("yellow");
+        rect(this.x, this.y + 150 - levelHeight, 150, levelHeight);
+    }
+
+    play(){
+        this.osc.start();
+        this.osc.freq(this.freq);
+        this.env.play(this.osc);
+    }
+}
+
+/* class Pad {
     constructor(x, y, freq) {
         //can set up the input squares here
 
@@ -80,4 +119,4 @@ class Pad {
     }
 
 
-}
+} */
