@@ -1,6 +1,7 @@
 let horizontal = 50; // distance between each circle
 let horizontal2 = 20; // distance between each circle
 let horizontal3 = 10; // distance between each circle
+let horizontal4 = 5; // distance between each circle
 let waveWidth;
 let angle = 0.0;
 let amplitude = 100.0;
@@ -41,6 +42,8 @@ function renderWave() {
 
     ellipse(x * horizontal2, height / 2 + yvalues[x], 16, 16);
     ellipse(x * horizontal3, height / 2 + yvalues[x], 16, 16);
+    ellipse(x * horizontal4, height / 2 + yvalues[x], 16, 16);
+    
 
     
   }
