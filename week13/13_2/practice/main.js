@@ -1,12 +1,8 @@
-let slider;
-let slider2;
 let pos;
 
 function setup() {
-    createCanvas(500, 500);
+    createCanvas(windowWidth, windowHeight);
     angleMode(DEGREES);
-    slider = createSlider(0, 15, 0);
-    slider2 = createSlider(0, 15, 0);
 
     pos = 0.0;
     inc = 3.0;
@@ -17,21 +13,27 @@ function setup() {
 
 function draw() {
 
-    clear();
-
+    fill("gold")
     translate(width/2, height/2);
 
     let mySinVal = sin(pos);
     let mySinVal2 = sin(pos2);
 
-    amplified = mySinVal * 50;
-    amplified2 = mySinVal2 * 50;
+    amplified = mySinVal * 200;
+    amplified2 = mySinVal2 * 1000;
 
     for (x = 0; x <= 360; x = x + 5) {
-        curve(0, 10, 50, amplified2, amplified, 10, amplified, 10);
+        curve(0, 5, 250, amplified2, amplified, 200, amplified, 200);
         rotate(x);
     }
-    pos = pos + slider.value();
-    pos2 = pos2 + slider.value();
+
+    fill("blue");
+    for(x = 0; x <= 360; x = x + 5) {
+        curve(0, 10, 50, 20, amplified, 10, 10, 10);
+        rotate(x);
+    }
+
+    pos = pos + inc;
+
 
 }
