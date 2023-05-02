@@ -14,15 +14,14 @@ let notes = [
 
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(windowWidth, windowHeight);
     audioContext = getAudioContext();
     mic = new p5.AudioIn();
     mic.start(listening);
 }
 
+//this function is used to see if the code is listening to the input sound (and is connected with the ml5 pitch detection)
 function listening() {
-    console.log("listening");
-
     pitch = ml5.pitchDetection(
         model_url,
         audioContext,
@@ -31,6 +30,7 @@ function listening() {
       );
 }
 
+//connecting pitch with freq
 function gotPitch(error, frequency) {
     if (error) {
         console.error(error);
@@ -43,7 +43,7 @@ function gotPitch(error, frequency) {
 }
 
 function modelLoaded() {
-    console.log("model loaded!");
+
     pitch.getPitch(gotPitch);
 }
 
@@ -70,39 +70,15 @@ function draw(){
     text(closestNote.note, width/2, height - 50);
 
 
- //allows for tuning of the array of notes
+ //allows for the visual tuning of the array of notes
     let diff = recordDiff;
+    let diam = map(abs(diff), 0, 100, 255, 0);
 
-
-
-    //let amt = map(abs(diff), 0, 100, 0, 1);
-    //let r = color(255, 0, 0);
-    //let g = color(0, 255, 0);
-    //let col = lerpColor(g, r, amt);  
-    //fill(col);
-    //rect(200, 100, diff, 50); 
-
-    let alpha = map(abs(diff), 0, 100, 255, 0);
-    rectMode(CENTER);
-    fill(255, alpha);
-    stroke(255);
-    strokeWeight(1);
-        if (abs(diff) < threshold) {
+    ellipseMode(CENTER);
+    fill(255, diam);
+            if (abs(diff) < threshold) {
             fill(0, 255, 0);
         }
-    rect(200, 100, 200, 50);
-
-
-    noStroke();
-    fill(255, 0, 0);
-    if (abs(diff) < threshold) {
-        fill(0, 255, 0);
-    }
-    rect(200 + diff/2, 100, 10, 75); 
-
-
-
-  
-    
+    ellipse(width/2, height/2, diam, diam);
 
 }
