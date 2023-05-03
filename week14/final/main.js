@@ -48,7 +48,8 @@ function modelLoaded() {
 }
 
 function draw(){
-    background(0);
+    background(0); //move backgrounf into setup there would be nothing removed already drawn 
+    //but lets make this polished and turned into a website form with a artist statement that covers the what why and how, along with a masthead / and probably credits
     textAlign(CENTER,CENTER);
     fill(255);
     textSize(32);
