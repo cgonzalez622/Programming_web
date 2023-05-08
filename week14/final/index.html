@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Assignment</title>
+    <link rel="stylesheet" href="main.css">
+    <title>The Portable Web Tuner</title>
   </head>
   <body>
+    <div class="about-container">
+        <h1>Your Own Portable and Interactive Tuner</h1>
+            <p> 
+                Have you ever wondered if the birds you hear outside are in tune, but don't have a tuner nearby? Fear not!
+                This portable web tuner captures your device's sound input, and deciphers that sound's pitch and the frequency number through ml5.js' pitch detection.
+                Ml5.js' pitch detection uses a pre-trained machine learning pitch detection model to estimate the pitch of the sound file. 
+                For instance, Ml5.js will detect if the device's sound input hits notes A, E, C, or G, and with the help of p5.js the circle in the middle will turn yellow if these notes are detected. 
+                In addition, this tuner will also interact with your sound's frequencies. 
+                The circle in the middle will gradually increase and decrease in size according to the sound's frequency. 
+                If you just like to play around with sounds, or need a tuner on the go, this a perfect tool to accomplish just that! 
+            </p>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
-    <script src="main.js"></script>    
+    <script class="main" src="main.js"></script>
   </body>
 </html>
+

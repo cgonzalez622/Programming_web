@@ -3,7 +3,7 @@ let pitch;
 let audioContext;
 let mic;
 let freq = 0;
-let threshold = 1;
+let threshold = 2;
 
 let notes = [
     {note: "A", freq: 440},
@@ -12,6 +12,10 @@ let notes = [
     {note: "G", freq: 391.9954}
 ]
 
+let img;
+function preload() {
+  img = loadImage("sky.jpg");
+}
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -48,12 +52,11 @@ function modelLoaded() {
 }
 
 function draw(){
-    background(0); //move backgrounf into setup there would be nothing removed already drawn 
-    //but lets make this polished and turned into a website form with a artist statement that covers the what why and how, along with a masthead / and probably credits
-    textAlign(CENTER,CENTER);
-    fill(255);
-    textSize(32);
-    text(freq.toFixed(2), width/2, height - 150);
+    background(img); 
+    textAlign(CENTER);
+    fill(0);
+    textSize(32); 
+    text(freq.toFixed(2), width/1.7, height/2);
 
     //loops through all of the notes
     let closestNote = null;
@@ -66,20 +69,20 @@ function draw(){
             recordDiff = diff;
         }
     }
-
     textSize(64);
-    text(closestNote.note, width/2, height - 50);
+    text(closestNote.note, width/1.7, height/1.5);
 
 
  //allows for the visual tuning of the array of notes
     let diff = recordDiff;
-    let diam = map(abs(diff), 0, 100, 255, 0);
+    let diam = map(abs(diff), 0, 100, 355, 0);
 
     ellipseMode(CENTER);
+    noStroke();
     fill(255, diam);
             if (abs(diff) < threshold) {
-            fill(0, 255, 0);
+            fill(255, 204, 0);
         }
-    ellipse(width/2, height/2, diam, diam);
+    ellipse(width/3.5, height/2, diam, diam);
 
 }
